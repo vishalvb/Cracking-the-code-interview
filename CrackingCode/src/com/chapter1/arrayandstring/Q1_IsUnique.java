@@ -2,7 +2,7 @@ package com.chapter1.arrayandstring;
 
 import java.util.Hashtable;
 
-public class IsUnique1 {
+public class Q1_IsUnique {
 
 	public static void main(String []args){
 		StringBuilder word = new StringBuilder();
