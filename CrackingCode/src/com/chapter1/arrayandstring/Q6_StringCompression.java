@@ -28,7 +28,7 @@ public class Q6_StringCompression {
 		//if(counter>1){
 			output = output+input.charAt(length-1)+counter;
 		//}
-		return output;
+		return output.length() < input.length() ? output : input;
 	}
 
 }
