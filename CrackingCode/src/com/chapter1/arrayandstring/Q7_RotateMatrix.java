@@ -27,17 +27,25 @@ public class Q7_RotateMatrix {
 		int newi = 0;
 		int newj = 0;
 		int output[][] = new int[n][n];
-		int limit = n/2;
+		int limit = n/2;//number of times to perform the operation
 		for(int k = 0; k < limit;k++){
+			
+			//copies the first row
 			for(i = k, j = k, newi = k, newj = n-1-k; j < n-1-k; j++, newi++){
 				output[newi][newj] = input[i][j];
 			}
+			
+			//copies the last column
 			for(i = k, j = n-1-k, newi = n-1-k, newj = n-1-k; i < n-1-k; i++, newj--){
 				output[newi][newj] = input[i][j];
 			}
+			
+			//copies the last row
 			for(i = n-1-k,j = n-1-k, newi = n-1-k, newj = k  ; j >= k; j--, newi--){
 				output[newi][newj] = input[i][j];
 			}
+			
+			//copies the first column
 			for(i = n-1-k, j = k, newi = k, newj = k; i > k; i--, newj++){
 				output[newi][newj] = input[i][j];
 			}
