@@ -1,6 +1,6 @@
 package com.chapter2.linkedlist;
 
-public class ReturnKLast {
+public class Q2_ReturnKLast {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
