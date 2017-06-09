@@ -5,7 +5,8 @@ public class Q8_Loop_Detection {
 		int number[] = {5,9,4,3,2,1};
 		Node List1  = createCircularList(number);
 		//printList(List1);
-		System.out.println(checkCircularList(List1));
+		Node result = checkCircularList(List1);
+		System.out.println(result + " "+result.data );
 	}
 	
 	private static Node checkCircularList(Node list1) {
@@ -52,7 +53,9 @@ public class Q8_Loop_Detection {
 			previous = temp;
 			}
 		}
-		//previous.next = head;
+		previous.next = head;
+		System.out.println(previous.data +" "+ previous);
+		System.out.println(head.data +" "+ head);
 		return head;
 	}
 	private static void printList(Node head) {
