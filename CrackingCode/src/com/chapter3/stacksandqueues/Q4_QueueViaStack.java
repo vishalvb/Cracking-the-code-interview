@@ -43,17 +43,12 @@ public class Q4_QueueViaStack<T> {
 		stack.add(2);
 		stack.add(3);
 		stack.add(4);
-		stack.add(5);
-		stack.add(6);
-		System.out.println(stack.pop());
-		System.out.println(stack.pop());
-		System.out.println(stack.pop());
-		System.out.println(stack.pop());
-		System.out.println(stack.pop());
 		System.out.println(stack.pop());
 		stack.add(5);
 		stack.add(6);
+		stack.add(7);
 		System.out.println(stack.pop());
+		
 	}
 
 }
