@@ -7,7 +7,7 @@ public class Q1_ThreeInOne {
 	private int number = 3;
 	private int stackSize;
 	private int[] array;
-	private int[] sizes;
+	private int[] size;
 	
 	public Q1_ThreeInOne(int stackSize){
 		this.stackSize = stackSize;
