@@ -17,12 +17,12 @@ class Node{
 		//n.adjacentCount++;
 	}
 	
-	public Node[] getAdjacent(Node n){
+	public Node[] getAdjacent(){
 		return this.adjacent;
 	}
 	
-	public int getData(Node n){
-		return n.data;
+	public int getData(){
+		return data;
 	}
 	
 }
