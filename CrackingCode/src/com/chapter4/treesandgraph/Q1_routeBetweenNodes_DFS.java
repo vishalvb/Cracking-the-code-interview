@@ -1,8 +1,8 @@
 package com.chapter4.treesandgraph;
 
-import java.util.LinkedList;
+import java.util.Stack;
 
-public class Q1_routeBetweenNodes {
+public class Q1_routeBetweenNodes_DFS {
 
 	public static boolean routeSearch(Graph g, Node start, Node end){
 		if(start == end){
@@ -10,27 +10,23 @@ public class Q1_routeBetweenNodes {
 		}
 		
 		start.status = "visiting";
-		LinkedList<Node> q= new LinkedList<Node>(); 
+		Stack<Node> q= new Stack<Node>(); 
 		
-		q.add(start);
+		q.push(start);
 		Node u;
 		while(!q.isEmpty()){
-			u = q.remove();
+			u = q.pop();
+			System.out.println("data is:"+u.getData());
 			if(u != null){
-				for(Node n:u.getAdjacent()){
-					if(n.status == "unvisited"){
-						if(n == end){
-							return true;
-						}
-						else{
-							n.status = "visiting";
-							System.out.println("Data is"+n.getData());
-							q.add(n);
-						}
-					}
-					
+				if(u == end){
+					return true;
 				}
-				u.status = "visited";
+				else{
+					for(Node n:u.getAdjacent()){
+						q.push(n);
+					}
+				}
+				
 			}
 		}
 		
@@ -43,8 +39,8 @@ public class Q1_routeBetweenNodes {
 		Graph graph = new Graph();
 		Node node[] = new Node[6];
 		
- 		node[0] = new Node(0,3);
- 		node[1] = new Node(1,0);
+ 		node[0] = new Node(0,2);
+ 		node[1] = new Node(1,1);
  		node[2] = new Node(2,1);
  		node[3] = new Node(3,0);
  		node[4] = new Node(4,0);
@@ -53,7 +49,7 @@ public class Q1_routeBetweenNodes {
  		node[0].addAdjacent(node[1]);
  		node[0].addAdjacent(node[2]);
  		node[2].addAdjacent(node[3]);
- 		node[0].addAdjacent(node[4]);
+ 		node[1].addAdjacent(node[4]);
  		//node[4].addAdjacent(node[5]);
  		//node[1].addAdjacent(node[5]);
  		//node[5].addAdjacent(node[0]);
@@ -62,7 +58,7 @@ public class Q1_routeBetweenNodes {
  		}
  		
  		Node nodes[] = graph.getNodes();
- 		boolean adj = routeSearch(graph,nodes[0],nodes[5]);
+ 		boolean adj = routeSearch(graph,nodes[0],nodes[3]);
  		System.out.println("route present"+adj);
 	}
 
