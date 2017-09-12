@@ -3,7 +3,7 @@ package com.chapter4.treesandgraph;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class Q4_listOfDepths {
+public class Q3_listOfDepths {
 	
 	public ArrayList<LinkedList<MinimalNode>> createList(MinimalNode root){
 		ArrayList<LinkedList<MinimalNode>> mainList = new ArrayList<LinkedList<MinimalNode>>();  
@@ -57,7 +57,7 @@ public class Q4_listOfDepths {
 		Q2_minimalTree n = new Q2_minimalTree();
 		MinimalNode root = new MinimalNode();
 		root = n.createMinimalTree(array,0,array.length - 1);
-		Q4_listOfDepths list = new Q4_listOfDepths();
+		Q3_listOfDepths list = new Q3_listOfDepths();
 		ArrayList<LinkedList<MinimalNode>> arrayRoot = list.createList(root);
 		list.print(arrayRoot);
 		
